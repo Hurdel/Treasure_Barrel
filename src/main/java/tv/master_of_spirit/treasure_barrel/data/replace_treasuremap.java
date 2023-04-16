@@ -2,7 +2,6 @@ package tv.master_of_spirit.treasure_barrel.data;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.LootGenerateEvent;
@@ -26,8 +25,7 @@ public class replace_treasuremap implements Listener {
                         // name
                         barrelmeta.setDisplayName(ChatColor.ITALIC + "Treasure Barrel");
                         // customtag
-                        NamespacedKey key = new NamespacedKey(Treasure_barrel.getPlugin(Treasure_barrel.class), "treasurebarrel");
-                        barrelmeta.getCustomTagContainer().setCustomTag(key, ItemTagType.STRING, "treasure_barrel");
+                        barrelmeta.getCustomTagContainer().setCustomTag(Treasure_barrel.getPlugin(Treasure_barrel.class).key, ItemTagType.STRING, "treasure_barrel");
                         // setmeta & replace map
                         treasurebarrel.setItemMeta(barrelmeta);
                         event.getLoot().add(treasurebarrel);

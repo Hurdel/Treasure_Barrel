@@ -17,7 +17,7 @@ import tv.master_of_spirit.treasure_barrel.data.replace_treasuremap;
 
 public final class Treasure_barrel extends JavaPlugin implements Listener {
 
-    NamespacedKey key = new NamespacedKey(this, "treasurebarrel");
+    public NamespacedKey key = new NamespacedKey(this, "treasurebarrel");
 
     @Override
     public void onEnable() {

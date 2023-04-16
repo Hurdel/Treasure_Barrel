@@ -1,7 +1,6 @@
 package tv.master_of_spirit.treasure_barrel.data;
 
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.block.Barrel;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,8 +16,7 @@ public class place_treasurebarrel implements Listener {
     public void PlaceBlockEvent(BlockPlaceEvent event) {
         if (event.getBlockPlaced().getType().equals(Material.BARREL)) {
             if (event.getItemInHand().hasItemMeta()) {
-                NamespacedKey key = new NamespacedKey(Treasure_barrel.getPlugin(Treasure_barrel.class), "treasurebarrel");
-                if (event.getItemInHand().getItemMeta().getCustomTagContainer().getCustomTag(key, ItemTagType.STRING).equals("treasure_barrel")) {
+                if (event.getItemInHand().getItemMeta().getCustomTagContainer().getCustomTag(Treasure_barrel.getPlugin(Treasure_barrel.class).key, ItemTagType.STRING).equals("treasure_barrel")) {
                     Barrel barrel = (Barrel) event.getBlock().getState();
                     // create LootContext
                     LootContext lootContext = new LootContext.Builder(event.getBlockPlaced().getLocation()).build();
