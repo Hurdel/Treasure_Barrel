@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.plugin.java.JavaPlugin;
 import tv.master_of_spirit.treasure_barrel.data.place_treasurebarrel;
 import tv.master_of_spirit.treasure_barrel.data.replace_treasuremap;
@@ -38,13 +39,13 @@ public final class Treasure_barrel extends JavaPlugin implements Listener {
                 case "treasurebarrel":
                     ItemStack treasurebarrel = new ItemStack(Material.BARREL);
                     ItemMeta barrelmeta = treasurebarrel.getItemMeta();
-                    // name
+                    //meta
                     if (barrelmeta != null) {
+                        // name
                         barrelmeta.setDisplayName(ChatColor.ITALIC + "Treasure Barrel");
-                        // lore
-                        ArrayList<String> lore = new ArrayList<>();
-                        lore.add(ChatColor.RESET + "" + ChatColor.AQUA + "Place this barrel to get the Loot");
-                        barrelmeta.setLore(lore);
+                        // customtag
+                        NamespacedKey key = new NamespacedKey(Treasure_barrel.getPlugin(Treasure_barrel.class), "treasurebarrel");
+                        barrelmeta.getCustomTagContainer().setCustomTag(key, ItemTagType.STRING, "treasure_barrel");
                     }
                     // setmeta & replace map
                     treasurebarrel.setItemMeta(barrelmeta);

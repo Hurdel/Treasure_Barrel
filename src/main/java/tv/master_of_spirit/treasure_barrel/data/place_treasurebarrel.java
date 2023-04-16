@@ -13,7 +13,6 @@ import tv.master_of_spirit.treasure_barrel.Treasure_barrel;
 
 
 public class place_treasurebarrel implements Listener {
-
     @EventHandler
     public void PlaceBlockEvent(BlockPlaceEvent event) {
         if (event.getBlockPlaced().getType().equals(Material.BARREL)) {

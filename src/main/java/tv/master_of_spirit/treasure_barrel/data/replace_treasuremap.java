@@ -1,10 +1,8 @@
 package tv.master_of_spirit.treasure_barrel.data;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.LootGenerateEvent;
@@ -12,7 +10,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootTables;
-import org.bukkit.plugin.Plugin;
 import tv.master_of_spirit.treasure_barrel.Treasure_barrel;
 
 
@@ -36,7 +33,6 @@ public class replace_treasuremap implements Listener {
                         barrelmeta.getCustomTagContainer().setCustomTag(key, ItemTagType.STRING, "treasure_barrel");
                         // setmeta & replace map
                         treasurebarrel.setItemMeta(barrelmeta);
-                        treasurebarrel.setAmount(item.getAmount());
                         event.getLoot().add(treasurebarrel);
                         event.getLoot().remove(item);
                     }
