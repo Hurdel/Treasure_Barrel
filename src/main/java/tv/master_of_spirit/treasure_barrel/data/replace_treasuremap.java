@@ -12,9 +12,6 @@ import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootTables;
 import tv.master_of_spirit.treasure_barrel.Treasure_barrel;
 
-
-import java.util.ArrayList;
-
 public class replace_treasuremap implements Listener {
 
     @EventHandler
