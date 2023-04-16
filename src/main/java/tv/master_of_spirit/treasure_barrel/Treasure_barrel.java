@@ -15,8 +15,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import tv.master_of_spirit.treasure_barrel.data.place_treasurebarrel;
 import tv.master_of_spirit.treasure_barrel.data.replace_treasuremap;
 
-import java.util.ArrayList;
-
 public final class Treasure_barrel extends JavaPlugin implements Listener {
 
     NamespacedKey key = new NamespacedKey(this, "treasurebarrel");
@@ -32,6 +30,7 @@ public final class Treasure_barrel extends JavaPlugin implements Listener {
         // Plugin shutdown logic
     }
 
+    // will be removed after testing
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
