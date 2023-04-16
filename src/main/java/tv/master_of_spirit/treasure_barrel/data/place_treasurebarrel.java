@@ -5,7 +5,6 @@ import org.bukkit.block.Barrel;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.inventory.meta.tags.CustomItemTagContainer;
 import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootContext;
 import org.bukkit.loot.LootTables;
