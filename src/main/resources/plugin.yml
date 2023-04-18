@@ -3,7 +3,3 @@ version: '${version}'
 main: tv.master_of_spirit.treasure_barrel.Treasure_barrel
 api-version: 1.19
 author: master_of_spirit
-commands:
-  treasurebarrel:
-    description: to make testing easier
-    usage: /command

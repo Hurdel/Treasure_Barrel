@@ -1,4 +1,4 @@
-package tv.master_of_spirit.treasure_barrel.data;
+package tv.master_of_spirit.treasure_barrel;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -9,7 +9,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootTables;
-import tv.master_of_spirit.treasure_barrel.Treasure_barrel;
 
 public class replace_treasuremap implements Listener {
 
@@ -26,10 +25,10 @@ public class replace_treasuremap implements Listener {
             // setmeta
             treasurebarrel.setItemMeta(barrelmeta);
             // remove treasure map
+            event.getLoot().add(treasurebarrel);
             try {
                 for (ItemStack item : event.getLoot()) {
                     if (item.getType().equals(Material.FILLED_MAP)) {
-                        event.getLoot().add(treasurebarrel);
                         event.getLoot().remove(item);
                         break;
                     }

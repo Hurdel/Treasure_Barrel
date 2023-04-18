@@ -1,4 +1,4 @@
-package tv.master_of_spirit.treasure_barrel.data;
+package tv.master_of_spirit.treasure_barrel;
 
 import org.bukkit.Material;
 import org.bukkit.block.Barrel;
@@ -8,7 +8,6 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootContext;
 import org.bukkit.loot.LootTables;
-import tv.master_of_spirit.treasure_barrel.Treasure_barrel;
 
 
 public class place_treasurebarrel implements Listener {
