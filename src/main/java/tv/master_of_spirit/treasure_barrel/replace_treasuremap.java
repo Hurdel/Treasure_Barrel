@@ -11,7 +11,6 @@ import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootTables;
 
 public class replace_treasuremap implements Listener {
-
     @EventHandler
     public void GenerateLootEvent(LootGenerateEvent event) {
         if (event.getLootTable().getKey().equals(LootTables.SHIPWRECK_MAP.getKey())) {
