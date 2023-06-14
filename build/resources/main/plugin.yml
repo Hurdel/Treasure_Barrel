@@ -1,0 +1,5 @@
+name: Treasure_barrel
+version: '0.1-alpha'
+main: tv.master_of_spirit.treasure_barrel.Treasure_barrel
+api-version: 1.19
+author: master_of_spirit
