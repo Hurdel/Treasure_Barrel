@@ -15,8 +15,8 @@ public class place_treasurebarrel implements Listener {
     public void PlaceBlockEvent(BlockPlaceEvent event) {
         if (event.getBlockPlaced().getType().equals(Material.BARREL)) {
             if (event.getItemInHand().hasItemMeta()) {
-                if (event.getItemInHand().getItemMeta().getCustomTagContainer().getCustomTag(Treasure_barrel.getPlugin(Treasure_barrel.class).key, ItemTagType.STRING) != null) {
-                    if (event.getItemInHand().getItemMeta().getCustomTagContainer().getCustomTag(Treasure_barrel.getPlugin(Treasure_barrel.class).key, ItemTagType.STRING).equals("treasure_barrel")) {
+                if (event.getItemInHand().getItemMeta().getCustomTagContainer().getCustomTag(treasure_barrel.getPlugin(treasure_barrel.class).key, ItemTagType.STRING) != null) {
+                    if (event.getItemInHand().getItemMeta().getCustomTagContainer().getCustomTag(treasure_barrel.getPlugin(treasure_barrel.class).key, ItemTagType.STRING).equals("treasure_barrel")) {
                         Barrel barrel = (Barrel) event.getBlock().getState();
                         // create LootContext
                         LootContext lootContext = new LootContext.Builder(event.getBlock().getLocation()).build();

@@ -18,17 +18,18 @@ public class replace_treasuremap implements Listener {
         if (event.getLootTable().getKey().equals(LootTables.SHIPWRECK_MAP.getKey())) {
             Random random = new Random();
             int randomNumber = random.nextInt(4);
+            // get meta & ItemStack
+            ItemStack treasurebarrel = new ItemStack(Material.BARREL);
+            ItemMeta barrelmeta = treasurebarrel.getItemMeta();
+            // name
+            barrelmeta.setDisplayName(ChatColor.ITALIC + "Treasure Barrel");
+            // customtag
+            barrelmeta.getCustomTagContainer().setCustomTag(treasure_barrel.getPlugin(treasure_barrel.class).key, ItemTagType.STRING, "treasure_barrel");
+            // setmeta
+            treasurebarrel.setItemMeta(barrelmeta);
+
             if (randomNumber != 3) {
-                // get meta & ItemStack
-                ItemStack treasurebarrel = new ItemStack(Material.BARREL);
-                ItemMeta barrelmeta = treasurebarrel.getItemMeta();
-                // name
-                barrelmeta.setDisplayName(ChatColor.ITALIC + "Treasure Barrel");
-                // customtag
-                barrelmeta.getCustomTagContainer().setCustomTag(Treasure_barrel.getPlugin(Treasure_barrel.class).key, ItemTagType.STRING, "treasure_barrel");
-                // setmeta
-                treasurebarrel.setItemMeta(barrelmeta);
-                // remove treasure map
+                // add treasure barrel
                 event.getLoot().add(treasurebarrel);
             }
             try {
