@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'tv.master_of_spirit'
-version = '0.1-alpha'
+version = '0.1'
 
 repositories {
     mavenCentral()

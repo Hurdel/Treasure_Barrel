@@ -1,5 +1,5 @@
-name: Treasure_barrel
+name: treasure_barrel
 version: '${version}'
-main: tv.master_of_spirit.treasure_barrel.Treasure_barrel
+main: tv.master_of_spirit.treasure_barrel.treasure_barrel
 api-version: 1.19
 author: master_of_spirit
