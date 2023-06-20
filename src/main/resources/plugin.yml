@@ -2,4 +2,7 @@ name: treasure_barrel
 version: '${version}'
 main: tv.master_of_spirit.treasure_barrel.treasure_barrel
 api-version: 1.19
-author: master_of_spirit
+author: executed_chaos
+commands:
+  set_percentage:
+    usage: /command

@@ -1,5 +1,6 @@
 package tv.master_of_spirit.treasure_barrel;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -10,9 +11,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootTables;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Random;
+import java.util.Scanner;
 
 public class replace_treasuremap implements Listener {
+
+    public int spawnpercentage = 75;
+
     @EventHandler
     public void GenerateLootEvent(LootGenerateEvent event) {
         if (event.getLootTable().getKey().equals(LootTables.SHIPWRECK_MAP.getKey())) {
@@ -28,7 +35,22 @@ public class replace_treasuremap implements Listener {
             // setmeta
             treasurebarrel.setItemMeta(barrelmeta);
 
-            if (randomNumber != 3) {
+            try {
+                File myObj = new File("treasure_barrel.yml");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String nextLine = myReader.nextLine();
+                    if (nextLine.contains("treasure_barrel:")) {
+                        spawnpercentage = Integer.parseInt(nextLine.split(" ")[1]);
+                    }
+                }
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "can't read the config-file!" + ChatColor.RESET);
+                e.printStackTrace();
+            }
+
+            if (randomNumber > spawnpercentage) {
                 // add treasure barrel
                 event.getLoot().add(treasurebarrel);
             }
