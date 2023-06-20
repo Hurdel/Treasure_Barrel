@@ -62,7 +62,7 @@ public final class treasure_barrel extends JavaPlugin implements Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player || sender instanceof ConsoleCommandSender) {
+        if ((sender instanceof Player && sender.isOp()) || sender instanceof ConsoleCommandSender) {
             switch (command.getName()) {
                 case "set_percentage":
                     if (args.length == 1) {
