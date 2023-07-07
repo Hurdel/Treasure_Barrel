@@ -3,6 +3,6 @@ version: '0.1'
 main: tv.master_of_spirit.treasure_barrel.treasure_barrel
 api-version: 1.19
 author: executed_chaos
-commands:
-  set_percentage:
-    usage: /command
+#commands:
+#  set_percentage:
+#    usage: /command
