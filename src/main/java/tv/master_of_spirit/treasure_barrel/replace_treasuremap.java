@@ -1,10 +1,7 @@
 package tv.master_of_spirit.treasure_barrel;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.LootGenerateEvent;
@@ -13,20 +10,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootTables;
 
-import java.io.Console;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Random;
-import java.util.Scanner;
-
 public class replace_treasuremap implements Listener {
 
     public int spawnpercentage = 75;
 
     @EventHandler
     public void GenerateLootEvent(LootGenerateEvent event) {
+
         if (event.getLootTable().getKey().equals(LootTables.SHIPWRECK_MAP.getKey())) {
-            Random random = new Random();
             // get meta & ItemStack
             ItemStack treasurebarrel = new ItemStack(Material.BARREL);
             ItemMeta barrelmeta = treasurebarrel.getItemMeta();
@@ -53,7 +44,7 @@ public class replace_treasuremap implements Listener {
 //            }
 
             spawnpercentage = 75;
-            int randomNumber = random.nextInt(100);
+            int randomNumber = (int) (Math.random() * (100));
             if (randomNumber < spawnpercentage) {
                 // add treasure barrel
                 event.getLoot().add(treasurebarrel);

@@ -9,7 +9,6 @@ import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootContext;
 import org.bukkit.loot.LootTables;
 
-
 public class place_treasurebarrel implements Listener {
     @EventHandler
     public void PlaceBlockEvent(BlockPlaceEvent event) {
