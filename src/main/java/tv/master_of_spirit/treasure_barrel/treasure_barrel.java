@@ -59,47 +59,4 @@ public final class treasure_barrel extends JavaPlugin implements Listener {
     public void onDisable() {
         // Plugin shutdown logic
     }
-
-//    @Override
-//    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-//        if ((sender instanceof Player && sender.isOp()) || sender instanceof ConsoleCommandSender) {
-//            switch (command.getName()) {
-//                case "set_percentage":
-//                    if (args.length == 1) {
-//                        spawnpercentage = Integer.parseInt(args[0]);
-//                        FileWriter myWriter = null;
-//                        try {
-//                            myWriter = new FileWriter("treasure_barrel.yml");
-//                            myWriter.write("treasure_barrel: " + spawnpercentage);
-//                            myWriter.close();
-//                        } catch (Exception e) {
-//                            sender.sendMessage(ChatColor.RED + "You can only use Intagers between 0 and 100!" + ChatColor.RESET);
-//                        }
-//                        sender.sendMessage(ChatColor.GRAY + "Spawn-percentage for the Treasure-barrel is now set to " + spawnpercentage + ChatColor.RESET);
-//                    }
-//                    else if (args.length == 0) {
-//                        sender.sendMessage(ChatColor.GRAY + "Spawn-percentage for the Treasure-barrel is currently " + spawnpercentage + ChatColor.RESET);
-//                    }
-//            }
-//        }
-//        return true;
-//    }
-//
-//    @Override
-//    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-//        if (sender instanceof Player) {
-//            if (command.getName().equals("set_percentage")) {
-//                if (args.length == 1) {
-//                    List<String> intret = new ArrayList<>();
-//                    for (int i = 0; i < 100; i++) {
-//                        intret.add(Integer.toString(i + 1));
-//                    }
-//                    return intret;
-//                } else {
-//                    return new ArrayList<>();
-//                }
-//            }
-//        }
-//        return null;
-//    }
 }

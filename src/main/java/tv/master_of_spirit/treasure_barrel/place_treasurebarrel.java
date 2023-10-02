@@ -9,6 +9,8 @@ import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.loot.LootContext;
 import org.bukkit.loot.LootTables;
 
+import java.util.Random;
+
 public class place_treasurebarrel implements Listener {
     @EventHandler
     public void PlaceBlockEvent(BlockPlaceEvent event) {
@@ -19,8 +21,9 @@ public class place_treasurebarrel implements Listener {
                         Barrel barrel = (Barrel) event.getBlock().getState();
                         // create LootContext
                         LootContext lootContext = new LootContext.Builder(event.getBlock().getLocation()).build();
+                        Random random = new Random();
                         // fill the barrel with the loot
-                        LootTables.BURIED_TREASURE.getLootTable().fillInventory(barrel.getInventory(), null, lootContext);
+                        LootTables.BURIED_TREASURE.getLootTable().fillInventory(barrel.getInventory(), random, lootContext);
                     }
                 }
             }
